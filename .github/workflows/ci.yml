@@ -18,6 +18,14 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+        
+      - name: Print environment info
+        env:
+         APP_NAME: "github-actions-python-ci"
+        run: |
+          echo "App: $APP_NAME"
+          python --version
+          pip --version
 
       - name: Install dependencies
         run: |

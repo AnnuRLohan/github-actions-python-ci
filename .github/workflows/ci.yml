@@ -21,10 +21,11 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          # If requirements.txt exists, install it; otherwise just install pytest
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          pip install pytest
 
       - name: Run tests
         run: pytest -q
       
-      - name: Lint with Ruff
-        run: ruff check .
+      

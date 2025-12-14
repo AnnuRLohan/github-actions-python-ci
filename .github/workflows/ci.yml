@@ -36,6 +36,13 @@ jobs:
           echo "GitHub repo: $GITHUB_REPOSITORY"
           python --version
 
+      - name: Use a secret safely
+        env: 
+          MY_SECRET: ${{ secrets.MY_SECRET }}
+        run: |
+          echo "Secret is set (but GitHub will hide it in logs)."
+          python -c "import os; print('Secret length:', len(os.getenv(MY_SECRET')))"
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
@@ -51,6 +58,6 @@ jobs:
         with: 
            name: test-output
            path: test-output.txt
-           
+
       
       

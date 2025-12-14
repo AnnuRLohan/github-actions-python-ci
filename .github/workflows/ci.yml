@@ -41,7 +41,7 @@ jobs:
           MY_SECRET: ${{ secrets.MY_SECRET }}
         run: |
           echo "Secret is set (but GitHub will hide it in logs)."
-          python -c "import os; print('Secret length:', len(os.getenv(MY_SECRET')))"
+          python -c "import os; print('Secret length:', len(os.getenv('MY_SECRET')))"
 
       - name: Install dependencies
         run: |

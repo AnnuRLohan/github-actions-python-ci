@@ -24,8 +24,9 @@ jobs:
          APP_NAME: "github-actions-python-ci"
         run: |
           echo "App: $APP_NAME"
+          echo "Runner OS: $RUNNER_OS"
+          echo "GitHub repo: $GITHUB_REPOSITORY"
           python --version
-          pip --version
 
       - name: Install dependencies
         run: |

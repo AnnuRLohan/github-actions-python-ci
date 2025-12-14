@@ -48,7 +48,8 @@ jobs:
         run: echo "build_version=$(date +%Y%m%d-%H%M%S)" >> $GITHUB_OUTPUT
 
       - name: Show build version
-        run: echo "Build version is: ${{ steps.version.outputs.build_version }}"
+        run: echo 'Build version is ${{ steps.version.outputs.build_version }}'
+        
 
       - name: Install dependencies
         run: |

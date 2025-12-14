@@ -27,7 +27,7 @@ jobs:
           restore-keys: |
             pip-${{ runner.os }}-
         
-      - name: Print environment info
+      - name: Print environment infoo
         env:
          APP_NAME: "github-actions-python-ci"
         run: |
